@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-end",
+
   },
   header_container: {
     top: 0,

@@ -12,16 +12,20 @@ export const CartContex = createContext();
 export const HomeContex = createContext();
 export const FavouriteContex = createContext();
 export const CurrencyContex = createContext();
+export const TableNumContex = createContext();
 
 export default function App() {
   const [currentTheme, setCurrentTheme] = useState(THEME);
   const [cartData, setCartData] = useState([]);
   const [homeData, setHomeData] = useState([]);
   const [favouriteData, setFavouriteData] = useState([]);
+  const [tableNumData,setTableNumData] = useState();
+
   const themeContexValue = { currentTheme, setCurrentTheme };
   const cartContexvalue = { cartData, setCartData };
   const homeContexValue = { homeData, setHomeData };
   const favouriteContexValue = { favouriteData, setFavouriteData };
+  const tableNumContexValue = { tableNumData, setTableNumData};
   const currencyContexValue = CURRENCY;
 
   let [fontsLoaded] = useFonts({
@@ -35,15 +39,17 @@ export default function App() {
     <MenuProvider>
       <CurrencyContex.Provider value={currencyContexValue}>
         <ThemeContex.Provider value={themeContexValue}>
-          <HomeContex.Provider value={homeContexValue}>
-            <CartContex.Provider value={cartContexvalue}>
-              <FavouriteContex.Provider value={favouriteContexValue}>
-                <NavigationContainer theme={currentTheme}>
-                  <RootNavigator />
-                </NavigationContainer>
-              </FavouriteContex.Provider>
-            </CartContex.Provider>
-          </HomeContex.Provider>
+          <TableNumContex.Provider value={tableNumContexValue}>
+            <HomeContex.Provider value={homeContexValue}>
+              <CartContex.Provider value={cartContexvalue}>
+                <FavouriteContex.Provider value={favouriteContexValue}>
+                  <NavigationContainer theme={currentTheme}>
+                    <RootNavigator />
+                  </NavigationContainer>
+                </FavouriteContex.Provider>
+              </CartContex.Provider>
+            </HomeContex.Provider>
+          </TableNumContex.Provider>
         </ThemeContex.Provider>
       </CurrencyContex.Provider>
     </MenuProvider>

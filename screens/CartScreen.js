@@ -82,6 +82,7 @@ export default function CartScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
   },
   flatList: {
     flexGrow: 0,

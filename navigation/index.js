@@ -7,7 +7,8 @@ import { Pressable } from "react-native";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import HomeScreen from "../screens/HomeScreen";
-import FavouriteScreen from "../screens/FavouriteScreen";
+// import FavouriteScreen from "../screens/FavouriteScreen";
+import TableNumScreen from "../screens/TableNumScreen";
 import CartScreen from "../screens/CartScreen";
 import MenuScreen from "../screens/MenuScreen";
 import { useTheme } from "@react-navigation/native";
@@ -69,7 +70,7 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="home"
+      initialRouteName="tableNum"
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
@@ -80,6 +81,23 @@ function BottomTabNavigator() {
         tabBarInactiveTintColor: colors.bottomTab.inactive,
       }}
     >
+      <BottomTab.Screen
+        name="tableNum"
+        component={TableNumScreen}
+        options={{
+          title: "TableNumber",
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="hdd" size={25} color={color} />
+          ),
+          tabBarLabel: () => null,
+          headerShown: true,
+          title: "TableNumber",
+          headerStyle: {
+            backgroundColor: colors.accent,
+          },
+          headerTintColor: colors.headerText,
+        }}
+      />
       <BottomTab.Screen
         name="home"
         component={HomeScreen}
@@ -113,7 +131,7 @@ function BottomTabNavigator() {
           ),
         })}
       />
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="favourite"
         component={FavouriteScreen}
         options={{
@@ -129,7 +147,8 @@ function BottomTabNavigator() {
           },
           headerTintColor: colors.headerText,
         }}
-      />
+      /> */}
+
       <BottomTab.Screen
         name="cart"
         component={CartScreen}

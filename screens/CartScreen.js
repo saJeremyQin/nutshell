@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useContext, useEffect, useState } from "react";
-import { CartContex, CurrencyContex } from "../App";
+import { CartContex, CurrencyContex,TableNumContex } from "../App";
 import { CartDish } from "../components/CartDish";
 import { useTheme } from "@react-navigation/native";
 import { EmptyData } from "../components/EmptyData";
@@ -20,6 +20,7 @@ const deviceWidth = Dimensions.get("window").width;
 const faltListHeight = Dimensions.get("window").height - footerContainerHeight;
 export default function CartScreen({ navigation }) {
   const { cartData } = useContext(CartContex);
+  const { tableNumData} = useContext(TableNumContex);
   const currency = useContext(CurrencyContex);
   const [totalBill, setTotalBill] = useState(0);
   const { colors } = useTheme();
@@ -48,6 +49,9 @@ export default function CartScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <View style={styles.tableNum_view}>
+        <Text style={{fontSize:26, color:"#887"}}>Current Table Number:{tableNumData}</Text>
+      </View>
       <FlatList
         style={styles.flatList}
         data={cartData}
@@ -82,7 +86,10 @@ export default function CartScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
+  },
+  tableNum_view:{
+    margin:15,
+    alignItems:"center"
   },
   flatList: {
     flexGrow: 0,

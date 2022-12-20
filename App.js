@@ -19,13 +19,13 @@ export default function App() {
   const [cartData, setCartData] = useState([]);
   const [homeData, setHomeData] = useState([]);
   const [favouriteData, setFavouriteData] = useState([]);
-  const [tableNumData,setTableNumData] = useState();
+  const [tableNumData,setTableNumData] = useState('');
 
   const themeContexValue = { currentTheme, setCurrentTheme };
   const cartContexvalue = { cartData, setCartData };
   const homeContexValue = { homeData, setHomeData };
   const favouriteContexValue = { favouriteData, setFavouriteData };
-  const tableNumContexValue = { tableNumData, setTableNumData};
+  const tableNumContexValue = { tableNumData, setTableNumData };
   const currencyContexValue = CURRENCY;
 
   let [fontsLoaded] = useFonts({

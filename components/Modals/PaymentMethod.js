@@ -107,7 +107,7 @@ export function PaymentMethod() {
         style={[styles.checkout_btn, { backgroundColor: colors.accent }]}
         onPress={handleCheckout}
       >
-        <Text>CHECKOUT</Text>
+        <Text>Print Preview</Text>
       </TouchableOpacity>
     </>
   );

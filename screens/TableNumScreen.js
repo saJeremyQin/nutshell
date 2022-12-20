@@ -15,6 +15,11 @@ import { TableNumContex } from "../App";
 export default function TableNumScreen({ navigation }) {
 
     const { tableNumData, setTableNumData } = useContext(TableNumContex);
+    console.log(typeof(tableNumData));
+
+    const onPressHandler = () => {
+        console.log("set success!", tableNumData);
+    }
 
 
     return (
@@ -28,15 +33,14 @@ export default function TableNumScreen({ navigation }) {
             <TextInput
                 placeholder='Only number!' 
                 style={styles.textInput} 
-                keyboardType='number-pad'
-                onChangeText={setTableNumData}
-                value = {tableNumData}
+                // keyboardType='numeric'
+                onChangeText={(value)=>{setTableNumData(value)}}
+               
             />
             <View style={styles.buttonContainer}>
                 <View style={styles.buttonView}>
-                    <Button title='Set Table Number' onPress={setTableNumData} color="#5e0acc" />
+                    <Button title='Set Table Number' onPress={onPressHandler()} color="#5e0acc" />
                 </View>
-
             </View> 
         </View>
     );

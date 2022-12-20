@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useState, useContext } from "react";
 import { useTheme } from "@react-navigation/native";
-import { CartContex, CurrencyContex } from "../App";
+import { CartContex, CurrencyContex } from "../global/appContext";
 
 const bottomFeatureSize = 140;
 export function BottomFeature({

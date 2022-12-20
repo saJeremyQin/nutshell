@@ -3,7 +3,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useTheme } from "@react-navigation/native";
 import { useState, useEffect, useContext } from "react";
-import { CartContex, CurrencyContex } from "../App";
+import { CartContex, CurrencyContex } from "../global/appContext";
 
 const cardSize = 150;
 const blankImage =

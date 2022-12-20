@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, FlatList, Dimensions } from "react-native";
 import { SearchBox } from "../components/SearchBox";
 import { useState, useContext } from "react";
 import { DishCard } from "../components/DishCard";
-import { HomeContex } from "../App";
+import { HomeContex } from "../global/appContext";
 import { AntDesign } from "@expo/vector-icons";
 
 const deviceWidth = Dimensions.get("window").width;

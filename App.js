@@ -7,12 +7,15 @@ import { AppLoading } from "./components/AppLoading";
 import { CURRENCY, THEME } from "./global/constants";
 import { MenuProvider } from "react-native-popup-menu";
 
-export const ThemeContex = createContext();
-export const CartContex = createContext();
-export const HomeContex = createContext();
-export const FavouriteContex = createContext();
-export const CurrencyContex = createContext();
-export const TableNumContex = createContext();
+import { 
+  ThemeContex, 
+  CartContex, 
+  HomeContex, 
+  FavouriteContex, 
+  CurrencyContex,
+  TableNumContex 
+} from './global/appContext';
+
 
 export default function App() {
   const [currentTheme, setCurrentTheme] = useState(THEME);

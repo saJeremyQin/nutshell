@@ -9,7 +9,7 @@ import {
 
 import { useContext } from "react";
 
-import { TableNumContex } from "../App";
+import { TableNumContex } from "../global/appContext";
 
 
 export default function TableNumScreen({ navigation }) {

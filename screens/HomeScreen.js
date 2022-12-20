@@ -15,7 +15,7 @@ import { HeaderLogo } from "../components/HeaderLogo";
 import { Fold } from "react-native-animated-spinkit";
 import { DishCard } from "../components/DishCard";
 import { AppLoading } from "../components/AppLoading";
-import { CartContex, FavouriteContex, HomeContex } from "../App";
+import { CartContex, FavouriteContex, HomeContex } from "../global/appContext";
 import { DISHES_QUERY, client } from "../hooks/useRequest";
 import { DishTypeButton } from "../components/DishTypeButton";
 import AsyncStorage from "@react-native-async-storage/async-storage";

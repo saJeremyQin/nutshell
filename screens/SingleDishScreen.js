@@ -12,7 +12,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { BottomFeature } from "../components/BottomFeature";
 import { AntDesign } from "@expo/vector-icons";
 import { useEffect, useContext, useState } from "react";
-import { CartContex, CurrencyContex, FavouriteContex } from "../App";
+import { CartContex, CurrencyContex, FavouriteContex } from "../global/appContext";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const deviceWidth = Dimensions.get("window").width;

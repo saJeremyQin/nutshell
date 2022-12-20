@@ -9,7 +9,7 @@ import {
 import { useTheme } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import { useState, useContext, useEffect } from "react";
-import { BillContex, CartContex, CurrencyContex } from "../App";
+import { BillContex, CartContex, CurrencyContex } from "../global/appContext";
 
 const deviceWidth = Dimensions.get("window").width;
 const cartDishHeight = 80;

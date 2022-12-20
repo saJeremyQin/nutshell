@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useContext, useEffect, useState } from "react";
-import { CartContex, CurrencyContex,TableNumContex } from "../App";
+import { CartContex, CurrencyContex,TableNumContex } from "../global/appContext";
 import { CartDish } from "../components/CartDish";
 import { useTheme } from "@react-navigation/native";
 import { EmptyData } from "../components/EmptyData";

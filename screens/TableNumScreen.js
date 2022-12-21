@@ -4,82 +4,73 @@ import {
     Image,
     Text,
     TextInput,
-    Button
+    Button,
+    ImageBackground
 } from "react-native";
 
-import { useContext } from "react";
-
+import { useContext,useState } from "react";
 import { TableNumContex } from "../global/appContext";
+import JereButton from "../components/JereButton";
 
 
 export default function TableNumScreen({ navigation }) {
 
-    const { tableNumData, setTableNumData } = useContext(TableNumContex);
-    console.log(typeof(tableNumData));
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const onPressHandler = () => {
-        console.log("set success!", tableNumData);
+    const { tableNumData, setTableNumData } = useContext(TableNumContex);
+
+    const onPress = () => {
+
     }
 
-
     return (
-        <View style={styles.container}>
+        <View style={styles.body}>
             <Image 
                 style={styles.image}
                 source={require("../assets/bg.png")} 
                 resizeMode="center"
             />
-
             <TextInput
-                placeholder='Only number!' 
+                placeholder='Please input table number!' 
                 style={styles.textInput} 
-                // keyboardType='numeric'
-                onChangeText={(value)=>{setTableNumData(value)}}
-               
+                keyboardType='numeric'
+                onChangeText={(value)=>{setTableNumData(value)}}           
             />
             <View style={styles.buttonContainer}>
                 <View style={styles.buttonView}>
-                    <Button title='Set Table Number' onPress={onPressHandler()} color="#5e0acc" />
+                    <Button title='Set Table Number' onPress={onPress()} color="#5e0acc" />
                 </View>
             </View> 
         </View>
     );
-
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    image: {
-        width:300,
-        height:300,
-        padding:20
-    },
-    text:{
-        fontSize: 24,
-        color:'red',
-        marginBottom:10
-    },
-    textInput: {
-        width:"90%",
-        borderWidth:1,
-        borderColor:"#e4d0ff",
-        borderRadius:6,
-        backgroundColor:"#e4d0ff",
-        color:"#120438",
-        padding:5
-    },
-    buttonContainer: {
-        flexDirection:"row",
-        padding:8,
-    },
-    buttonView:{
-        width:"45%",
-        marginHorizontal:8,
-        borderWidth:2,
-        borderRadius:8
-    }
+  body:{
+    flex:1,
+    alignItems:"center"
+  },
+  textInput: {
+    width:"90%",
+    borderWidth:1,
+    borderColor:"#e4d0ff",
+    borderRadius:6,
+    backgroundColor:"#e4d0ff",
+    color:"#120438",
+    padding:5
+},
+buttonContainer: {
+    flexDirection:"row",
+    padding:8,
+},
+image: {
+    width:300,
+    height:300,
+    padding:20
+},
+buttonView:{
+    width:"40%",
+    marginHorizontal:8
+}
+    
 })
